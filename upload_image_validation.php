@@ -19,7 +19,7 @@ $options = array(
 );
 
 try {
-  $response = FroalaEditor_Image::upload('/uploads/', $options);
+  $response = FroalaEditor_Image::upload(dirname($_SERVER['REQUEST_URI']).'/uploads/', $options);
   echo stripslashes(json_encode($response));
 } catch (Exception $e) {
   echo $e->getMessage();
