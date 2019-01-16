@@ -120,6 +120,22 @@ $hash = stripslashes(json_encode($hash));
         imageManagerDeleteURL: "./delete_image.php",
         imageManagerDeleteMethod: "POST"
       })
+      // File Error event
+      .on('froalaEditor.file.error', function (e, editor, err, response) {
+          // Do something here.
+          // alert('File Error: ' + JSON.stringify(err));
+          var $popup = editor.popups.get('file.insert');
+          var $layer = $popup.find('.fr-file-progress-bar-layer');
+          $layer.find('h3').text(response);
+      })
+      // Image Error event
+      .on('froalaEditor.image.error', function (e, editor, err, response) {
+          // Do something here.
+          // alert('Image Error: ' + JSON.stringify(err));
+          var $popup = editor.popups.get('image.insert');
+          var $layer = $popup.find('.fr-image-progress-bar-layer');
+          $layer.find('h3').text(response);
+      })
       // Catch image removal from the editor.
       .on('froalaEditor.image.removed', function (e, editor, $img) {
         $.ajax({
@@ -136,9 +152,11 @@ $hash = stripslashes(json_encode($hash));
         })
         .done (function (data) {
           console.log ('image was deleted');
+          alert ('Image was deleted');
         })
         .fail (function (err) {
           console.log ('image delete problem: ' + JSON.stringify(err));
+          alert ('image delete problem: ' + JSON.stringify(err));
         })
       })
 
@@ -159,9 +177,11 @@ $hash = stripslashes(json_encode($hash));
         })
         .done (function (data) {
           console.log ('file was deleted');
+          alert ('File was deleted');
         })
         .fail (function (err) {
           console.log ('file delete problem: ' + JSON.stringify(err));
+          alert ('File delete problem: ' + JSON.stringify(err));
         })
       })
     });
@@ -191,6 +211,22 @@ $hash = stripslashes(json_encode($hash));
         imageManagerDeleteURL: "./delete_image.php",
         imageManagerDeleteMethod: "POST"
       })
+      // File Error event
+      .on('froalaEditor.file.error', function (e, editor, err, response) {
+          // Do something here.
+          // alert('File Error: ' + JSON.stringify(err));
+          var $popup = editor.popups.get('file.insert');
+          var $layer = $popup.find('.fr-file-progress-bar-layer');
+          $layer.find('h3').text(response);
+      })
+      // Image Error event
+      .on('froalaEditor.image.error', function (e, editor, err, response) {
+          // Do something here.
+          // alert('Image Error: ' + JSON.stringify(err));
+          var $popup = editor.popups.get('image.insert');
+          var $layer = $popup.find('.fr-image-progress-bar-layer');
+          $layer.find('h3').text(response);
+      })
       // Catch image removal from the editor.
       .on('froalaEditor.image.removed', function (e, editor, $img) {
         $.ajax({
@@ -207,9 +243,11 @@ $hash = stripslashes(json_encode($hash));
         })
         .done (function (data) {
           console.log ('image was deleted');
+          alert ('Image was deleted');
         })
         .fail (function (err) {
           console.log ('image delete problem: ' + JSON.stringify(err));
+          alert ('Image delete problem: ' + JSON.stringify(err));
         })
       })
 
@@ -230,9 +268,11 @@ $hash = stripslashes(json_encode($hash));
         })
         .done (function (data) {
           console.log ('file was deleted');
+          alert ('File was deleted');
         })
         .fail (function (err) {
           console.log ('file delete problem: ' + JSON.stringify(err));
+          alert ('File delete problem: ' + JSON.stringify(err));
         })
       })
     });
@@ -265,6 +305,22 @@ $hash = stripslashes(json_encode($hash));
         imageManagerDeleteURL: "./delete_image.php",
         imageManagerDeleteMethod: "POST"
       })
+      // File Error event
+      .on('froalaEditor.file.error', function (e, editor, err, response) {
+          // Do something here.
+          // alert('File Error: ' + JSON.stringify(err));
+          var $popup = editor.popups.get('file.insert');
+          var $layer = $popup.find('.fr-file-progress-bar-layer');
+          $layer.find('h3').text(response);
+      })
+      // Image Error event
+      .on('froalaEditor.image.error', function (e, editor, err, response) {
+          // Do something here.
+          // alert('Image Error: ' + JSON.stringify(err));
+          var $popup = editor.popups.get('image.insert');
+          var $layer = $popup.find('.fr-image-progress-bar-layer');
+          $layer.find('h3').text(response);
+      })
       // Catch image removal from the editor.
       .on('froalaEditor.image.removed', function (e, editor, $img) {
         $.ajax({
@@ -281,9 +337,11 @@ $hash = stripslashes(json_encode($hash));
         })
         .done (function (data) {
           console.log ('image was deleted');
+          alert ('Image was deleted');
         })
         .fail (function (err) {
           console.log ('image delete problem: ' + JSON.stringify(err));
+          alert ('Image delete problem: ' + JSON.stringify(err));
         })
       })
 
@@ -304,9 +362,11 @@ $hash = stripslashes(json_encode($hash));
         })
         .done (function (data) {
           console.log ('file was deleted');
+          alert ('File was deleted');
         })
         .fail (function (err) {
           console.log ('file delete problem: ' + JSON.stringify(err));
+          alert ('File delete problem: ' + JSON.stringify(err));
         })
       })
     });
